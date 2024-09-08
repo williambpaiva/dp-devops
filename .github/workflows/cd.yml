@@ -16,4 +16,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: final.zip
-          path: path/to/artifact/ # or path/to/artifact
+          path: |
+            **.py
+            README.md
