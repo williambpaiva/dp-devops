@@ -1,0 +1,19 @@
+name: CD - Formativa
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Continuous Delivery
+        uses: actions/upload-artifact@v4
+        with:
+          name: final.zip
+          path: path/to/artifact/ # or path/to/artifact
