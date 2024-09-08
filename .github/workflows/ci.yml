@@ -1,4 +1,4 @@
-name: CI - Formativa
+name: CI - Atividade Formativa
 on:
   pull_request:
     branches:
