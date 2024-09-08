@@ -15,7 +15,7 @@ jobs:
       - name: Continuous Delivery
         uses: actions/upload-artifact@v4
         with:
-          name: final.zip
+          name: finalproject
           path: |
             **.py
             README.md
@@ -26,6 +26,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: final.zip
+          name: finalproject
       - name: Display files
         run: ls -R
