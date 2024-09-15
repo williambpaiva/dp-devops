@@ -1,34 +1,24 @@
-def adicao(a, b):
-    return a + b
+def calc():
+    while True:
+        try:
+            var1 = float(input("Digite um numero: "))
+            var2 = float(input("Digite outro numero: "))
+            soma = var1 + var2
+            subtracao = var1 - var2
+            mult = var1 * var2
+            div = var1 / var2
+            expo = var1 ** var2
+            resto = var1 % var2
 
-def subtracao(a, b):
-    return a - b
+            # Imprimindo tudo
+            print('Soma:             ', var1, '+', var2, ' = ', soma)
+            print('Subtração:        ', var1, '-', var2, ' = ', subtracao)
+            print('Multiplicação:    ', var1, '*', var2, ' = ', mult)
+            print('Divisão:          ', var1, '/', var2, ' = ', div)
+            print('Exponenciação:    ', var1, '**', var2, ' = ', expo)
+            print('Resto da divisão: ', var1, '%', var2, ' = ', resto)
+        except EOFError:
+            return
+        print("FIM")
 
-def multiplicacao(a, b):
-    return a * b
-
-def divisao(a, b):
-    return a / b
-
-def calculadora():
-    operacao = input("Escolha uma operação (+, -, *, /): ")
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
-
-    if operacao == "+":
-        resultado = adicao(num1, num2)
-        print("O resultado da adição é:", resultado)
-    elif operacao == "-":
-        resultado = subtracao(num1, num2)
-        print("O resultado da subtração é:", resultado)
-    elif operacao == "*":
-        resultado = multiplicacao(num1, num2)
-        print("O resultado da multiplicação é:", resultado)
-    elif operacao == "/":
-        resultado = divisao(num1, num2)
-        print("O resultado da divisão é:", resultado)
-    else:
-        print("Operação inválida!")
-
-calculadora()
-
+calc()
