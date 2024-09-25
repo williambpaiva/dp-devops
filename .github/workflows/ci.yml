@@ -21,5 +21,18 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-
-
+  alert:
+    runs-on: windows-latest
+    steps:
+      - name: Send Telegram Alert
+        env:
+          TELEGRAM_TOKEN: '7082971552:AAGbOG6amP--nccNR9Oxpr4cdJylx-3f2zU'
+          TELEGRAM_CHAT_ID: '-4245329360'
+        shell: pwsh
+        run: |
+          $url = "https://api.telegram.org/bot${env:TELEGRAM_TOKEN}/sendMessage"
+          $body = @{
+            chat_id = "${env:TELEGRAM_CHAT_ID}"
+            text = " --------NOTIFICACAO ENVIADA---------"
+          } | ConvertTo-Json
+          Invoke-RestMethod -Uri $url -Method Post -Body $body -ContentType "application/json"
